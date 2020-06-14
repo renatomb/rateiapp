@@ -1,5 +1,28 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="rateiapp.PagePessoas">
-    <ContentPage.Content>
-    </ContentPage.Content>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="rateiapp.PagePessoas" Title="Pessoas">
+    <StackLayout>
+        <Entry x:Name="enPessoa" Placeholder="Nome da pessoa"></Entry>
+        <Button x:Name="btAddPessoa" Text="Incluir" Clicked="btAddPessoa_Clicked"></Button>
+        <Label Text="Pessoas na conta:"></Label>
+        <ListView x:Name="lvPessoas" ItemsSource="{Binding Pessoas}" ItemTapped="lvPessoas_ItemTapped" CachingStrategy="RecycleElement">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="1" Text="{Binding nomeDaPessoa}" FontAttributes="Bold" />
+                            <Label Grid.Column="2" Text="{Binding contaDaPessoa, StringFormat='R$ {0}'}" VerticalOptions="End" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 </ContentPage>
