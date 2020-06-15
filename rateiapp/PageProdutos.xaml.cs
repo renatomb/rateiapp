@@ -27,14 +27,5 @@ namespace rateiapp
             LoadProdutos();
         }
 
-        void lvProdutos_ItemTapped(System.Object sender, Xamarin.Forms.ItemTappedEventArgs e)
-        {
-            if (e.Item == null)
-                return;
-            Produto selecionado;
-            selecionado = (Produto)((ListView)sender).SelectedItem;
-            DisplayAlert("Item Tapped", "An item was tapped." + selecionado.nomeDoProduto + selecionado.valorDoProduto.ToString(), "OK");
-            ((ListView)sender).SelectedItem = null;
-        }
     }
 }

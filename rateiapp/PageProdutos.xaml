@@ -5,7 +5,7 @@
         <Entry x:Name="enValor" Placeholder="Valor do Produto" Keyboard="Numeric"></Entry>
         <Button x:Name="btAddProduto" Text="Incluir Produto" Clicked="btAddProduto_Clicked"></Button>
         <Label Text="Itens na conta:"></Label>
-        <ListView x:Name="lvProdutos" ItemsSource="{Binding Produtos}" ItemTapped="lvProdutos_ItemTapped" CachingStrategy="RecycleElement">
+        <ListView x:Name="lvProdutos" ItemsSource="{Binding Produtos}" CachingStrategy="RecycleElement">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
