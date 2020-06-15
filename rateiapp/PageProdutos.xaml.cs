@@ -21,7 +21,7 @@ namespace rateiapp
 
         void btAddProduto_Clicked(System.Object sender, System.EventArgs e)
         {
-            conta.Produtos.Add(new Produto { nomeDoProduto = enProduto.Text, valorDoProduto = Convert.ToDouble(enValor.Text) });
+            conta.Produtos.Add(new Produto { nomeDoProduto = enProduto.Text, valorDoProduto = Convert.ToDecimal(enValor.Text), displayNome=enProduto.Text+" (R$ "+enValor.Text+")" });
             enProduto.Text = "";
             enValor.Text = "";
             LoadProdutos();

@@ -6,7 +6,8 @@
         <Button x:Name="btnPessoas" Text="👥" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" FontSize="Large" Clicked="btnPessoas_Clicked" Scale="2"></Button>
         <Button x:Name="btnItens" Text="🍹" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" FontSize="Large" Scale="2" Clicked="btnItens_Clicked"></Button>
         <Button x:Name="btnDemo" Text="Popular Dados Demo" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Clicked="btnDemo_Clicked"></Button>
-        <Label Text="Total da conta R$" Scale="3" HorizontalOptions="Center" Margin="0,0,0,25"></Label>
-        <Label Text="39.518,74" Scale="4" HorizontalOptions="CenterAndExpand" Margin="0,0,0,20"></Label>
+        <Label x:Name="lbTotais" Text="Totais" Scale="2" HorizontalOptions="Center" Margin="0,0,0,25" IsVisible="false"></Label>
+        <Label x:Name="lbTotalGeral" Scale="2" HorizontalOptions="CenterAndExpand" Margin="0,0,0,20" TextColor="Blue"></Label>
+        <Label x:Name="lbTotalDez" Scale="2" HorizontalOptions="CenterAndExpand" Margin="0,0,0,20" BackgroundColor="Navy" TextColor="White"></Label>
     </StackLayout>
 </ContentPage>

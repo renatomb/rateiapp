@@ -32,9 +32,14 @@ namespace rateiapp
                 return;
             Pessoa selecionado;
             selecionado = (Pessoa)((ListView)sender).SelectedItem;
-
-            DisplayAlert("Item Tapped", "An item was tapped." + selecionado.nomeDaPessoa + selecionado.contaDaPessoa.ToString(), "OK");
+            Navigation.PushAsync(new PageVerPessoa(selecionado));
+            //DisplayAlert("Item Tapped", "An item was tapped." + selecionado.nomeDaPessoa + selecionado.contaDaPessoa.ToString(), "OK");
             ((ListView)sender).SelectedItem = null;
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            LoadPessoas();
         }
     }
 }

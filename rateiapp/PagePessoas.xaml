@@ -4,7 +4,7 @@
         <Entry x:Name="enPessoa" Placeholder="Nome da pessoa"></Entry>
         <Button x:Name="btAddPessoa" Text="Incluir" Clicked="btAddPessoa_Clicked"></Button>
         <Label Text="Pessoas na conta:"></Label>
-        <ListView x:Name="lvPessoas" ItemsSource="{Binding Pessoas}" ItemTapped="lvPessoas_ItemTapped" CachingStrategy="RecycleElement">
+        <ListView x:Name="lvPessoas" ItemsSource="{Binding conta.Pessoas}" ItemTapped="lvPessoas_ItemTapped"> 
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -18,7 +18,8 @@
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <Label Grid.Column="1" Text="{Binding nomeDaPessoa}" FontAttributes="Bold" />
-                            <Label Grid.Column="2" Text="{Binding contaDaPessoa, StringFormat='R$ {0}'}" VerticalOptions="End" />
+                            <Label Grid.Column="2" Text="{Binding contaDaPessoa, StringFormat='R$ {0}'}" />
+                            <Label Grid.Column="3" Text="{Binding totalPessoa, StringFormat='+10% = R$ {0}'}" FontAttributes="Bold" VerticalOptions="End"  />
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
