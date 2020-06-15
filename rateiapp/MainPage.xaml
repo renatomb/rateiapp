@@ -1,13 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="rateiapp.MainPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="rateiapp.MainPage" Title="RateiApp ✂︎">
     <StackLayout>
-        <Label Text="✂︎" HorizontalOptions="Center" FontSize="Large" Scale="5" VerticalOptions="Start" Margin="0,8,0,0" />
-        <Label Text="Rateio" HorizontalOptions="Center" Scale="4" Padding="0,12,0,0" />
-        <Button x:Name="btnPessoas" Text="👥" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" FontSize="Large" Clicked="btnPessoas_Clicked" Scale="2"></Button>
         <Button x:Name="btnItens" Text="🍹" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" FontSize="Large" Scale="2" Clicked="btnItens_Clicked"></Button>
+        <Button x:Name="btnPessoas" Text="👥" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" FontSize="Large" Clicked="btnPessoas_Clicked" Scale="2"></Button>
         <Button x:Name="btnDemo" Text="Popular Dados Demo" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Clicked="btnDemo_Clicked"></Button>
         <Label x:Name="lbTotais" Text="Totais" Scale="2" HorizontalOptions="Center" Margin="0,0,0,25" IsVisible="false"></Label>
         <Label x:Name="lbTotalGeral" Scale="2" HorizontalOptions="CenterAndExpand" Margin="0,0,0,20" TextColor="Blue"></Label>
         <Label x:Name="lbTotalDez" Scale="2" HorizontalOptions="CenterAndExpand" Margin="0,0,0,20" BackgroundColor="Navy" TextColor="White"></Label>
+        <Label Text="Desenvolvido por Renato Monteiro Batista" HorizontalOptions="Center"></Label>
     </StackLayout>
 </ContentPage>

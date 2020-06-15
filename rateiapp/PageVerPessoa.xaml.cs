@@ -34,14 +34,25 @@ namespace rateiapp
         }
         void pkProduto_SelectedIndexChanged(System.Object sender, System.EventArgs e)
         {
-            enQtd.IsEnabled = true;
-            btAddConta.IsEnabled = true;
+            if (pkProduto.SelectedIndex >= 0)
+            {
+                enQtd.IsEnabled = true;
+                btAddConta.IsEnabled = true;
+            }
+            else
+            {
+                enQtd.IsEnabled = false;
+                btAddConta.IsEnabled = false;
+            }
+
         }
 
         void btAddConta_Clicked(System.Object sender, System.EventArgs e)
         {
             qual = (Produto)pkProduto.SelectedItem;
             atual.AddItem(qual,Convert.ToDecimal(enQtd.Text));
+            enQtd.Text = "";
+            pkProduto.SelectedIndex = -1;
             CarregaContaIndividual();
         }
     }
