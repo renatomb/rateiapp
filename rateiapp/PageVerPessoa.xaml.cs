@@ -22,13 +22,14 @@ namespace rateiapp
             pagina.Title = "Conta de " + atual.nomeDaPessoa;
             lbAdd.Text = "Adicionar itens a conta de " + atual.nomeDaPessoa;
             pkProduto.ItemsSource = conta.Produtos;
+
         }
         public void CarregaContaIndividual()
         {
             lvConta.ItemsSource = null;
             lvConta.ItemsSource = atual.itens;
             lbTotalItens.Text = atual.nomeDaPessoa + " R$ " + atual.contaDaPessoa.ToString();
-            lbDezPorcento.Text = "10% = " + atual.dezPorcento.ToString();
+            lbDezPorcento.Text = conta.taxa.ToString()+"% = " + atual.dezPorcento.ToString();
             lbTotalIndiv.Text = "R$ "+ atual.totalPessoa.ToString();
 
         }
@@ -50,10 +51,17 @@ namespace rateiapp
         void btAddConta_Clicked(System.Object sender, System.EventArgs e)
         {
             qual = (Produto)pkProduto.SelectedItem;
-            atual.AddItem(qual,Convert.ToDecimal(enQtd.Text));
-            enQtd.Text = "";
-            pkProduto.SelectedIndex = -1;
-            CarregaContaIndividual();
+            if (Convert.ToDecimal(enQtd.Text) > 0)
+            {
+                atual.AddItem(qual, Convert.ToDecimal(enQtd.Text));
+                enQtd.Text = "";
+                pkProduto.SelectedIndex = -1;
+                CarregaContaIndividual();
+            }
+            else
+            {
+                DisplayAlert("Quantidade inválida", "Informe a quantidade de " + qual.nomeDoProduto + " que foi consumida por " + atual.nomeDaPessoa, "OK");
+            }
         }
     }
 }

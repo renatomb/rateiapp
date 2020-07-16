@@ -21,9 +21,16 @@ namespace rateiapp
 
         void btAddPessoa_Clicked(System.Object sender, System.EventArgs e)
         {
-            conta.Pessoas.Add(new Pessoa { nomeDaPessoa = enPessoa.Text, contaDaPessoa = 0 });
-            enPessoa.Text = "";
-            LoadPessoas();
+            if (enPessoa.Text == null) 
+            {
+                DisplayAlert("ERRO", "Por gentileza informe um nome para a pessoa.", "OK");
+            }
+            else
+            {
+                conta.Pessoas.Add(new Pessoa { nomeDaPessoa = enPessoa.Text, contaDaPessoa = 0 });
+                enPessoa.Text = null;
+                LoadPessoas();
+            }
         }
 
         void lvPessoas_ItemTapped(System.Object sender, Xamarin.Forms.ItemTappedEventArgs e)
@@ -33,7 +40,6 @@ namespace rateiapp
             Pessoa selecionado;
             selecionado = (Pessoa)((ListView)sender).SelectedItem;
             Navigation.PushAsync(new PageVerPessoa(selecionado));
-            //DisplayAlert("Item Tapped", "An item was tapped." + selecionado.nomeDaPessoa + selecionado.contaDaPessoa.ToString(), "OK");
             ((ListView)sender).SelectedItem = null;
         }
         protected override void OnAppearing()

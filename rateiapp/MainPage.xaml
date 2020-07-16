@@ -1,12 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="rateiapp.MainPage" Title="RateiApp ✂︎">
-    <StackLayout>
-        <Button x:Name="btnItens" Text="🍹" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" FontSize="Large" Scale="2" Clicked="btnItens_Clicked"></Button>
-        <Button x:Name="btnPessoas" Text="👥" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" FontSize="Large" Clicked="btnPessoas_Clicked" Scale="2"></Button>
-        <Button x:Name="btnDemo" Text="Popular Dados Demo" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Clicked="btnDemo_Clicked"></Button>
-        <Label x:Name="lbTotais" Text="Totais" Scale="2" HorizontalOptions="Center" Margin="0,0,0,25" IsVisible="false"></Label>
-        <Label x:Name="lbTotalGeral" Scale="2" HorizontalOptions="CenterAndExpand" Margin="0,0,0,20" TextColor="Blue"></Label>
-        <Label x:Name="lbTotalDez" Scale="2" HorizontalOptions="CenterAndExpand" Margin="0,0,0,20" BackgroundColor="Navy" TextColor="White"></Label>
-        <Label Text="Desenvolvido por Renato Monteiro Batista" HorizontalOptions="Center"></Label>
+    <StackLayout BackgroundColor="#D7D7D7">
+        <Grid RowSpacing="10" ColumnSpacing="10" >
+            <ImageButton x:Name="btnPessoas" Source="pax.png" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Clicked="btnPessoas_Clicked" Grid.Row="0" Grid.Column="0"></ImageButton>
+            <ImageButton x:Name="btnItens" Source="drnk.png" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Clicked="btnItens_Clicked" Grid.Row="0" Grid.Column="1"></ImageButton>
+            <ImageButton x:Name="btServico" Source="perc.png" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Grid.Row="1" Grid.Column="0" Clicked="btServico_Clicked"></ImageButton>
+            <ImageButton x:Name="btnLimpar" Source="clean.png" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Clicked="btnLimpar_Clicked" Grid.Row="1" Grid.Column="1"></ImageButton>
+        </Grid>
+
+        <Button x:Name="btnDemo" Text="Popular Dados Demo" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Clicked="btnDemo_Clicked" BackgroundColor="Blue" TextColor="White"></Button>
+        <Label x:Name="lbTotais" Text="Totais:" Scale="2" HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalOptions="End" Margin="0,0,0,10" BackgroundColor="DarkGray" TextColor="Blue" IsVisible="false"></Label>
+        <Label x:Name="lbTotalGeral" Scale="2" HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalOptions="End" Margin="0,0,0,10" BackgroundColor="DarkGray" TextColor="Blue"></Label>
+        <Label x:Name="lbTotalDez" Text="DezPorcento" Scale="2" HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalOptions="End" Margin="0,0,0,20" BackgroundColor="Navy" TextColor="White"></Label>
+        <Label x:Name="lbDesenvolvedor" Text="Desenvolvido por Renato Monteiro Batista" HorizontalOptions="Center" VerticalOptions="End"></Label>
+        <Label Text="Ícones: Freepik e Vitaly Gorbachev em flaticon.com" HorizontalTextAlignment="Center" VerticalOptions="End" Margin="0" Padding="0,0,0,15"></Label>
     </StackLayout>
-</ContentPage>
+</ContentPage> 

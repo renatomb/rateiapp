@@ -2,8 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="rateiapp.PageProdutos" Title="Itens da conta">
     <StackLayout>
         <Entry x:Name="enProduto" Placeholder="Nome do Produto"></Entry>
-        <Entry x:Name="enValor" Placeholder="Valor do Produto" Keyboard="Numeric"></Entry>
-        <Button x:Name="btAddProduto" Text="Incluir Produto" Clicked="btAddProduto_Clicked"></Button>
+        <Entry x:Name="enValor" Placeholder="Valor unitário do Produto" Keyboard="Numeric"></Entry>
+        <Grid>
+            <CheckBox x:Name="cbTodos" Grid.Column="0">
+            </CheckBox>
+            <Label Text="Adicionar um para todas as pessoas existentes" Grid.Column="1" CharacterSpacing="1" InputTransparent="False" Grid.ColumnSpan="10"></Label>
+        </Grid>
+        <Button x:Name="btAddProduto" Text="Incluir Produto" Clicked="btAddProduto_Clicked" BackgroundColor="Blue" TextColor="White"></Button>
         <Label Text="Itens na conta:"></Label>
         <ListView x:Name="lvProdutos" ItemsSource="{Binding Produtos}" CachingStrategy="RecycleElement">
             <ListView.ItemTemplate>

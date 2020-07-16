@@ -12,10 +12,9 @@
         <Picker x:Name="pkProduto" Title="Selecione um Item" ItemsSource="{Binding Produtos}" ItemDisplayBinding="{Binding displayNome}" SelectedIndexChanged="pkProduto_SelectedIndexChanged">
         </Picker>
         <Entry x:Name="enQtd" Placeholder="Quantidade" Keyboard="Numeric" IsEnabled="False"></Entry>
-        <Button x:Name="btAddConta" Text="Adicionar a conta" IsEnabled="False" Clicked="btAddConta_Clicked"></Button>
-        <Label x:Name="lbTotalItens" Text="Total Individual" Scale="2" HorizontalOptions="CenterAndExpand" Padding="0,0,0,10"></Label>
-        <Label x:Name="lbDezPorcento" Text="10%" Scale="2" HorizontalOptions="CenterAndExpand" Padding="0,0,0,10"></Label>
+        <Button x:Name="btAddConta" Text="Adicionar a conta" IsEnabled="False" Clicked="btAddConta_Clicked" BackgroundColor="Blue" TextColor="White"></Button>
+        <Label x:Name="lbTotalItens" Text="Total Individual" Scale="2" HorizontalOptions="CenterAndExpand" Padding="0,5,0,10"></Label>
+        <Label x:Name="lbDezPorcento" Text="%" Scale="2" HorizontalOptions="CenterAndExpand" Padding="0,0,0,10"></Label>
         <Label x:Name="lbTotalIndiv" Text="Total Geral" Scale="2" HorizontalOptions="CenterAndExpand" Padding="0,0,0,10"></Label>
-
     </StackLayout>
 </ContentPage>
